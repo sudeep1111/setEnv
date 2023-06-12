@@ -11,9 +11,10 @@ jobs:
 
     steps:
       - name: Set Environment Variables
+        id: set-env
         run: |
-          echo "ENV_VAR1=value1" >> $GITHUB_ENV
-          echo "ENV_VAR2=value2" >> $GITHUB_ENV
+          echo "ENV_VAR1=${{ inputs.env_var1 }}" >> $GITHUB_ENV
+          echo "ENV_VAR2=${{ inputs.env_var2 }}" >> $GITHUB_ENV
 
       - name: Print Environment Variables
         run: |
