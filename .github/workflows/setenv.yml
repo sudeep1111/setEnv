@@ -1,0 +1,21 @@
+name: Set Environment Variables
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set Environment Variables
+        run: |
+          echo "ENV_VAR1=value1" >> $GITHUB_ENV
+          echo "ENV_VAR2=value2" >> $GITHUB_ENV
+
+      - name: Print Environment Variables
+        run: |
+          echo "Environment Variable 1: $ENV_VAR1"
+          echo "Environment Variable 2: $ENV_VAR2"
